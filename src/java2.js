@@ -27,7 +27,9 @@ function displayWeather(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#humidity").innerHTML = Math.round(
+    response.data.main.humidity
+  );
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
@@ -50,7 +52,7 @@ function searchLocation(position) {
 
 function getCurrrentLocation(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrrentPosition(searchLocation);
+  navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
 let dateElement = document.querySelector("#date");
