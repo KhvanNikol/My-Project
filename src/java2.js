@@ -50,7 +50,7 @@ function searchLocation(position) {
 
 function getCurrrentLocation(event) {
   event.preventDefault();
-  navigator.geolocation, getCurrrentLocation(searchLocation);
+  navigator.geolocation.getCurrrentPosition(searchLocation);
 }
 
 let dateElement = document.querySelector("#date");
